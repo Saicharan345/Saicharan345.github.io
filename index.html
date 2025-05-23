@@ -1,108 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Saicharan Bagadi | Portfolio</title>
   <style>
+    /* Reset and base styles */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #222;
       margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
+      padding: 0 20px 40px 20px;
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
-    header {
-      background-color: #007BFF;
+
+    header, footer {
+      background-color: #004080;
       color: white;
-      padding: 20px 0;
+      padding: 20px 20px;
       text-align: center;
+      border-radius: 8px;
+      margin: 20px auto;
+      max-width: 900px;
     }
-    main {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-      background-color: white;
+
+    header h1 {
+      margin: 0 0 6px 0;
+      font-weight: 700;
+      font-size: 2.8rem;
+      letter-spacing: 1.1px;
     }
-    section {
-      margin-bottom: 30px;
+
+    header p {
+      margin: 0 0 12px 0;
+      font-weight: 500;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #b3d1ff;
     }
-    h2 {
-      color: #007BFF;
+
+    nav {
+      margin-bottom: 10px;
     }
-    a.button {
-      padding: 10px 20px;
-      background-color: #007BFF;
-      color: white;
+
+    nav a {
       text-decoration: none;
-      border-radius: 5px;
+      color: #aad4ff;
+      font-weight: 600;
+      margin: 0 12px;
+      transition: color 0.3s ease;
+      font-size: 1.1rem;
     }
-    ul {
-      list-style-type: square;
+
+    nav a:hover {
+      color: #ffd166;
+    }
+
+    #darkToggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.3rem;
+      margin-left: 12px;
+      color: #aad4ff;
+      transition: color 0.3s ease;
+      vertical-align: middle;
+    }
+
+    #darkToggle:hover {
+      color: #ffd166;
+    }
+
+    .resume-btn {
+      display: inline-block;
+      background-color: #ffd166;
+      color: #004080;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 30px;
+      margin-top: 10px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .resume-btn:hover {
+      background-color: #e6b800;
+      color: #00264d;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 20px auto;
+      background-color: white;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      border-bottom: 3px solid #ffd166;
+      padding-bottom: 6px;
+      color: #004080;
+    }
+
+    section ul {
+      list-style-type: disc;
       padding-left: 20px;
+      font-size: 1.1rem;
+      line-height: 1.5;
     }
-    ul li {
-      margin-bottom: 15px;
+
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background-color: #eee;
-      margin-top: 40px;
+
+    footer p {
+      font-size: 0.9rem;
+      margin: 0;
+      color: #d9e3f0;
+    }
+
+    /* Dark mode styles */
+    .dark-mode {
+      background-color: #121A2B;
+      color: #E0E6F0;
+    }
+    .dark-mode header,
+    .dark-mode footer {
+      background-color: #1F2A44;
+    }
+    .dark-mode section {
+      background-color: #243556;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+    .dark-mode section h2 {
+      color: #A8C0FF; /* lighter sky blue for headings */
+      border-bottom-color: #FFD166; /* warm gold underline */
+    }
+    .dark-mode nav a {
+      color: #A8C0FF;
+    }
+    .dark-mode nav a:hover {
+      color: #FFD166;
+    }
+    .dark-mode .resume-btn {
+      background-color: #395B94;
+      color: #FFD166;
+      border: 1px solid #FFD166;
+    }
+    .dark-mode .resume-btn:hover {
+      background-color: #FFD166;
+      color: #243556;
+    }
+    .dark-mode #darkToggle {
+      color: #A8C0FF;
+    }
+    .dark-mode #darkToggle:hover {
+      color: #FFD166;
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Saicharan Bagadi</h1>
     <p>Computer Science Student | Developer | Tech Enthusiast</p>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+      <button id="darkToggle" aria-label="Toggle Dark Mode">🌙</button>
+    </nav>
+    <a href="Resume_2025.pdf" class="resume-btn" download>Download Resume</a>
+    
   </header>
 
-  <main>
-    <!-- Resume Download -->
-    <section>
-      <h2>Resume</h2>
-      <a href="Resume_2025.pdf" download class="button">Download My Resume</a>
-    </section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Smart Parking System</strong> – Implemented using OOP in C++</li>
+      <li><strong>Simple Banking System</strong> – Python-based CLI application</li>
+      <li><strong>Exam Grading System</strong> – HTML, CSS, JavaScript</li>
+      <li><strong>Portfolio Website</strong> – Static site using HTML, CSS, JS</li>
+      <li><strong>ET-Website</strong> – Case Study Sample Website. Explore on <a href="https://github.com/Saicharan345/ET-Website" target="_blank" rel="noopener noreferrer">GitHub</a>.</li>
+      <li><strong>digimart123</strong> – E-commerce web project available on <a href="https://github.com/Saicharan345/digimart123" target="_blank" rel="noopener noreferrer">GitHub</a>.</li>
+    </ul>
+  </section>
 
-    <!-- Projects -->
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        <li>
-          <strong>Smart Parking System</strong><br>
-          A project using OOP in C++.<br>
-          <a href="https://github.com/AP23110010203/Case-study-website" target="_blank">GitHub Link</a>
-        </li>
-        <li>
-          <strong>Portfolio Website</strong><br>
-          Built using HTML, CSS, JS. (This site!)
-        </li>
-        <li>
-          <strong>Simple Banking System</strong><br>
-          Created using Python for handling basic transactions.
-        </li>
-        <li>
-          <strong>Exam Grading System</strong><br>
-          JavaScript-based tool for calculating and displaying grades.
-        </li>
-      </ul>
-    </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm Saicharan Bagadi, currently pursuing B.Tech in Computer Science at SRM University, AP. 
+      I enjoy solving real-world problems using C++, Python, and JavaScript.
+    </p>
+  </section>
 
-    <!-- Contact -->
-    <section>
-      <h2>Contact Me</h2>
-      <p>Email: <a href="mailto:saicharan_bagadi@srmap.edu.in">saicharan_bagadi@srmap.edu.in</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/saicharan-bagadi" target="_blank">Saicharan Bagadi</a></p>
-      <p>GitHub: <a href="https://github.com/AP23110010203" target="_blank">My GitHub Profile</a></p>
-    </section>
-  </main>
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul>
+      <li>✔️ Automated Railway Gate – Infosys Springboard</li>
+      <li>✔️ Automated Traffic Light – Infosys Springboard</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:saicharanbagadi@gmail.com">saicharanbagadi@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/Saicharan345" target="_blank" rel="noopener noreferrer">Saicharan345</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/saicharan-bagadi-33a81a312" target="_blank" rel="noopener noreferrer">Saicharan Bagadi</a></p>
+  </section>
 
   <footer>
-    &copy; 2025 Saicharan Bagadi. All rights reserved.
+    <p>© 2025 Saicharan Bagadi. All rights reserved.</p>
   </footer>
 
+  <script>
+    const toggle = document.getElementById('darkToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
 </body>
 </html>
 
